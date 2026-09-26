@@ -1,69 +1,42 @@
-# 🐦 Flappy Bird Reinforcement Learning
+# 🐦 Flappy Bird RL — Deep Q-Learning Agent
 
-A Reinforcement Learning project based on the classic **Flappy Bird** game using **Gymnasium**, **Flappy Bird Gymnasium**, and **Pygame**.
+A Reinforcement Learning project where a Deep Q-Network (DQN) learns to play Flappy Bird using PyTorch and Gymnasium.
 
-The project is being developed to understand how Reinforcement Learning agents interact with an environment through **states, actions, rewards, and learning algorithms**.
+The agent learns through states, actions, rewards, and experience replay rather than manually programmed gameplay rules.
 
----
+## 🎮 Demo
 
-## 🚀 Project Overview
+### 🤖 Trained AI Gameplay
 
-In this project, Flappy Bird is used as a Reinforcement Learning environment.
+![AI Gameplay](assets/ai_gameplay.png)
 
-The bird needs to navigate through pipes while avoiding collisions.
+### 🎥 Gameplay Video
 
-The basic interaction follows:
+[▶ Watch the AI Gameplay Demo](assets/demo.mp4)
 
-State → Action → Reward → Next State
-
-The long-term goal of this project is to train an RL agent using **Deep Q-Network (DQN)** so that the bird can learn to play the game automatically.
-
----
-
-## 🎮 Current Features
-
-- Flappy Bird environment using Gymnasium
-- Human-rendered game window
-- Manual keyboard control
-- Space key for Flap action
-- Environment reset and step handling
-- Reward and state handling
-- Pygame integration
-
----
-
-## 🧠 Reinforcement Learning Concepts
-
-This project is designed to explore the following concepts:
-
-- Reinforcement Learning
-- Agent and Environment
-- State
-- Action
-- Reward
-- Q-Learning
-- Deep Q-Network (DQN)
-- Experience Replay
-- Target Network
-- Exploration vs Exploitation
-- ε-Greedy Policy
-
----
-
-## 🛠️ Technologies Used
-
-- **Python**
-- **Gymnasium**
-- **Flappy Bird Gymnasium**
-- **Pygame**
-- **Git & GitHub**
-
----
-
-## 📁 Project Structure
+## 🧠 How It Works
 
 ```text
-FlappyBird-RL-DQN/
-│
-├── flappybird_rl.py
-└── README.md
+Flappy Bird Environment
+          ↓
+        State
+          ↓
+      Policy DQN
+          ↓
+   Action Selection
+      ↙       ↘
+ Explore     Exploit
+      ↘       ↙
+        Action
+          ↓
+     Environment
+          ↓
+   Reward + Next State
+          ↓
+    Experience Replay
+          ↓
+      Mini-Batch
+          ↓
+      DQN Update
+          ↓
+    Target Network
